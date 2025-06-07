@@ -11,7 +11,7 @@ resource "aws_budgets_budget" "monthly_budget" {
     threshold_type             = "ABSOLUTE_VALUE"
     notification_type          = "ACTUAL"
     subscriber_email_addresses = ["haru.neichi0402@gmail.com"]
-    subscriber_sns_topic_arns  = ["aws_sns_topic.budget_alerts.arn"]
+    subscriber_sns_topic_arns  = [aws_sns_topic.budget_alerts.arn]
   }
 }
 
@@ -20,7 +20,7 @@ resource "aws_sns_topic" "budget_alerts" {
 }
 
 resource "aws_sns_topic_subscription" "email_subscription_neichi" {
-  topic_arn = "aws_sns_topic.budget_alerts.arn"
+  topic_arn = aws_sns_topic.budget_alerts.arn
   protocol  = "email"
   endpoint  = "haru.neichi0402@gmail.com"
 }
