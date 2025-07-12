@@ -9,10 +9,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "kdg-aws-2025-neichi"
-    key            = "tfstate/aws.tfstate"
-    region         = "ap-northeast-1"
-    encrypt        = true
+    bucket  = "kdg-aws-2025-neichi"
+    key     = "tfstate/aws.tfstate"
+    region  = "ap-northeast-1"
+    encrypt = true
   }
 }
 
